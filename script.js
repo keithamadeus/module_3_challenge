@@ -4,17 +4,29 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 // Collect employee data
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
-  let firstName = '';
-  let lastName = '';
-  let salary = 0;
-  let collectedEmpInfo = (firstName, lastName, salary);
-  while (true) {
-    firstName = prompt ("Please enter employee's first name.");
-    lastName = prompt ("Please enter employee's last name.");
-    salary = prompt ("Please enter employee's salary.");
+  let employeeArr = [];
+  let employee = {
+    firstName: "",
+    lastName: "",
+    salary: 0,
+  }
 
-    if (userInput === 'q') {
+  let addEmp = true
+  while (addEmp) {
+    employee.firstName = prompt ("Please enter employee's first name.");
+    employee.lastName = prompt ("Please enter employee's last name.");
+    employee.salary = prompt ("Please enter employee's salary.");
+    //push the object into the array Hint: How do I push a string into an array
+    employeeArr.push(employee);
+    //set object back to orignial empty quotes and 0 for salary
+    let addAgain = confirm("Would you like to add another employee") 
+    if(addAgain === false) {
+      // got to next step, to display employees, consider using an array of objects
+      displayEmployees;
       break;
+
+    }
+
   }
 };
 // collectEmployees();
@@ -22,11 +34,16 @@ const collectEmployees = function () {
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
   // TODO: Calculate and display the average salary
+  let averageSal = 0
+  //for loop starts to add salaries
+  //finish for loop
+  //divide by total number of employees
 };
 
 // Select a random employee
 const getRandomEmployee = function (employeesArray) {
   // TODO: Select and display a random employee
+  // Employee array.length in math.random to choose a random employee
 };
 
 /*
