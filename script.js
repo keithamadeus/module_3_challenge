@@ -15,7 +15,11 @@ const collectEmployees = function () {
   while (addEmp) {
     employee.firstName = prompt ("Please enter employee's first name.");
     employee.lastName = prompt ("Please enter employee's last name.");
-    employee.salary = prompt ("Please enter employee's salary.");
+    if (employee.salary === isNaN){
+      prompt ("Please enter a number. Use digits only.");
+    } else {
+      employee.salary = prompt ("Please enter employee's salary.");
+    }
     //push the object into the array Hint: How do I push a string into an array
     employeeArr.push(employee);
     
