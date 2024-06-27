@@ -32,10 +32,10 @@ const collectEmployees = function () {
       break;
 
     }
-
   }
+  return employeeArr;
 };
-collectEmployees();
+// collectEmployees();
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
