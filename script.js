@@ -15,10 +15,10 @@ const collectEmployees = function () {
   while (addEmp) {
     employee.firstName = prompt ("Please enter employee's first name.");
     employee.lastName = prompt ("Please enter employee's last name.");
-    if (employee.salary === isNaN){
-      prompt ("Please enter a number. Use digits only.");
-    } else {
-      employee.salary = prompt ("Please enter employee's salary.");
+    employee.salary = prompt ("Please enter employee's salary.");
+    if (isNaN(employee.salary)) {
+      alert ("Please enter a number. Use digits only.");
+      continue;
     }
     //push the object into the array Hint: How do I push a string into an array
     employeeArr.push(employee);
@@ -39,7 +39,6 @@ const collectEmployees = function () {
   }
   return employeeArr;
 };
-// collectEmployees();
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
