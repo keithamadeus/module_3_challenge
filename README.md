@@ -8,3 +8,5 @@ added displayAverageSalary for loop, and the average salary is incorrect
 debugger not working on file, need to check on it later and moved on. 
 
 bug: Only displaying the last employee data entered in all cells
+
+added getRandomEmployee logic
