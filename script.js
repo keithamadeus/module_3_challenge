@@ -18,18 +18,24 @@ const collectEmployees = function () {
     employee.salary = prompt ("Please enter employee's salary.");
     //push the object into the array Hint: How do I push a string into an array
     employeeArr.push(employee);
+    
     //set object back to orignial empty quotes and 0 for salary
     let addAgain = confirm("Would you like to add another employee") 
     if(addAgain === false) {
       // got to next step, to display employees, consider using an array of objects
-      displayEmployees;
+      employee = {
+        firstName: "",
+        lastName: "",
+        salary: 0,
+      }
+      displayEmployees(employeeArr);
       break;
 
     }
 
   }
 };
-// collectEmployees();
+collectEmployees();
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
