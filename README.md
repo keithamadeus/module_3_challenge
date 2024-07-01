@@ -10,3 +10,5 @@ debugger not working on file, need to check on it later and moved on.
 bug: Only displaying the last employee data entered in all cells
 
 added getRandomEmployee logic
+
+Fixed logic to get in order for multiple employee objects would be created. 

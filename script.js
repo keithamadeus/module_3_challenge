@@ -5,17 +5,17 @@ const addEmployeesBtn = document.querySelector('#add-employees-btn');
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
   let employeeArr = [];
-  let employee = {
-    firstName: "",
-    lastName: "",
-    salary: 0,
-  }
 
   let addEmp = true
   while (addEmp) {
+    employee = {
+      firstName: "",
+      lastName: "",
+      salary: 0,
+    }
     employee.firstName = prompt ("Please enter employee's first name.");
     employee.lastName = prompt ("Please enter employee's last name.");
-    employee.salary = prompt ("Please enter employee's salary.");
+    employee.salary = parseFloat(prompt ("Please enter employee's salary."));
     if (isNaN(employee.salary)) {
       alert ("Please enter a number. Use digits only.");
       continue;
@@ -27,11 +27,6 @@ const collectEmployees = function () {
     let addAgain = confirm("Would you like to add another employee") 
     if(addAgain === false) {
       // got to next step, to display employees, consider using an array of objects
-      employee = {
-        firstName: "",
-        lastName: "",
-        salary: 0,
-      }
       displayEmployees(employeeArr);
       break;
 
@@ -52,6 +47,7 @@ const displayAverageSalary = function (employeesArray) {
   }
   //divide by total number of employees
   averageSal = totalSal / employeesArray.length;
+  console.log(totalSal);
   console.log("The average employee salary between our " + employeesArray.length + " employees is " + averageSal + ".");
 }
 
