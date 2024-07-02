@@ -11,4 +11,6 @@ bug: Only displaying the last employee data entered in all cells
 
 added getRandomEmployee logic
 
-Fixed logic to get in order for multiple employee objects would be created. 
+Fixed logic to get in order for multiple employee objects would be created. []
+
+Added template literals to meet project criteria. 
