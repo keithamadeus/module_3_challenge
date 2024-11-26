@@ -1,38 +1,37 @@
 // Get a reference to the #add-employees-btn element
-const addEmployeesBtn = document.querySelector('#add-employees-btn');
+const addEmployeesBtn = document.querySelector("#add-employees-btn");
 
 // Collect employee data
 const collectEmployees = function () {
   // TODO: Get user input to create and return an array of employee objects
-  let employeeArr = [];
+  const employees = [];
+  let addEmployees = true;
 
-  let addEmp = true
-  while (addEmp) {
-    employee = {
-      firstName: "",
-      lastName: "",
-      salary: 0,
-    }
-    employee.firstName = prompt ("Please enter employee's first name.");
-    employee.lastName = prompt ("Please enter employee's last name.");
-    employee.salary = parseFloat(prompt ("Please enter employee's salary."));
-    if (isNaN(employee.salary)) {
-      alert ("Please enter a number. Use digits only.");
-      continue;
-    }
-    //push the object into the array Hint: How do I push a string into an array
-    employeeArr.push(employee);
-    
-    //set object back to orignial empty quotes and 0 for salary
-    let addAgain = confirm("Would you like to add another employee") 
-    if(addAgain === false) {
-      // got to next step, to display employees, consider using an array of objects
-      displayEmployees(employeeArr);
-      break;
+  // while loop to collect employee information
+  while (addEmployees) {
+    const firstName = prompt(`Required: Employee's First Name:`);
+    const lastName = prompt(`Required: Employee's Last Name:`);
+    let salary = prompt(`Required: Employee's Salary:`);
 
+    // Make sure the salary data entered is a number, or default to $0
+    salary = parseFloat(salary);
+    if (isNaN(salary)) {
+      salary = 0;
     }
+
+    // Add employee information to the table if first name and last name are entered
+    if (firstName && lastName) {
+      employees.push({ firstName, lastName, salary });
+    } else {
+      alert(`Please enter both a First and Last Name for the employee.`);
+    }
+
+    // Confirm to add another employee or exit to display the data
+    addEmployees = confirm(`Add another employee?`);
   }
-  return employeeArr;
+
+  // Return the employee data that was collected
+  return employees;
 };
 
 // Display the average salary
@@ -123,4 +122,4 @@ const trackEmployeeData = function () {
 };
 
 // Add event listener to 'Add Employees' button
-addEmployeesBtn.addEventListener('click', trackEmployeeData);
+addEmployeesBtn.addEventListener("click", trackEmployeeData);
